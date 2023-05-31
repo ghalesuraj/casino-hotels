@@ -120,6 +120,9 @@ h6 {
   position: relative;
   color: #ffffff;
 }
+.hero-lg{
+  width: 10%;
+}
 #hero .hero-title{
   display: block;
   font-size: 55px;
@@ -139,7 +142,7 @@ h6 {
 }
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.3);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -286,8 +289,6 @@ section {
 --------------------------------------------------------------*/
 .why-us .content {
   padding: 30px;
-  background: #009970;
-  border-radius: 4px;
   color: #fff;
 }
 
@@ -974,18 +975,11 @@ section {
   content: "/";
 }
 
-@media (max-width: 768px) {
-  .breadcrumbs .d-flex {
-    display: block !important;
+@media (min-width: 768px) {
+  .nav{
+    border-bottom: 1px solid #F3F4F6;
   }
-
-  .breadcrumbs ol {
-    display: block;
-  }
-
-  .breadcrumbs ol li {
-    display: inline-block;
-  }
+  
 }
 
 /*--------------------------------------------------------------
@@ -1149,4 +1143,18 @@ section {
 
 .navbar ul li a{
   color: #ffffff;
+  padding: 0px 20px;
+}
+.navbar{
+    margin-left: auto;
+    margin-right: auto;
+}
+.navbar .menu-footer-menu-container .menu{
+    list-style: none;
+    flex-direction: row;
+    display: flex;
+}
+.copyright{
+  color: #939393;
+  font-size: 16px;
 }

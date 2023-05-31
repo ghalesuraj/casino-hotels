@@ -2,6 +2,12 @@
   <!-- =======================================================
   * Template Name: HomePage
   ======================================================== -->
+ <?php
+  $hero_bg = get_field('hero_background');
+  $hero_lg = get_field('hero_logo');
+  $hero_title = get_field('hero_title');
+  $hero_subtitle = get_field('hero_subtitle');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,29 +15,29 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Casino Hotels - Discover The Best Casino Hotels In the World</title>
+  <title><?php echo get_bloginfo( 'name' ) . ' : '. get_bloginfo( 'description' ); ?></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="wp-content/themes/twentytwenty/assets/img/favicon.png" rel="icon">
+  <link href="wp-content/themes/twentytwenty/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="wp-content/themes/twentytwenty/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="wp-content/themes/twentytwenty/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="wp-content/themes/twentytwenty/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
+  <section id="hero" class="d-flex align-items-center" style="background: url(<?php echo $hero_bg; ?>) center center">
     <div class="container text-left position-relative">
-        <img class="hero-img" alt="" src="assets/img/logo.svg" />
-        <b class="hero-title" >Discover The Best Casino <br>Hotels In the World</b>
-        <div class="hero-text">Lorem Ipsom Dolor Sit Amet</div>
+        <img class="hero-lg" alt="" src="<?php echo $hero_lg; ?>" />
+        <b class="hero-title" ><?php echo $hero_title; ?></b>
+        <div class="hero-text"><?php echo $hero_subtitle; ?></div>
         <a href="#" class="theme-btn">
           <div class="btn-txt">Explore Today</div>
           <img class="btn-icon" alt="" src="assets/img/vector.svg" />
@@ -70,7 +76,7 @@
                 </a>
               </div>
               <div class="col-lg-6 pt-4 pt-lg-0">
-                <img src="assets/img/about-img.png" class="img-fluid abt-img" alt="">
+                <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/05/about-img.png" class="img-fluid abt-img" alt="">
               </div>
             </div>
         </div>
@@ -83,14 +89,7 @@
         <div class="row">
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="content">
-              <h3>Why Choose Bethany for your company website?</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
-              </p>
-              <div class="text-center">
-                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
-              </div>
+              <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/05/why-bg.png" class="img-fluid abt-img" alt="">
             </div>
           </div>
           <div class="col-lg-8 d-flex align-items-stretch">
@@ -134,28 +133,13 @@
         <div class="row">
           <div class="footer-brand"><img class="footer-lg" alt="" src="assets/img/footer-logo.svg" /></div>
           
-          <nav class="navbar navbar-expand-md">
-            <div class="container-fluid">
-              <div class="navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Reviews</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Terms & Conditions</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Privacy Policy</a>
-                  </li>
-                </ul>
+          <nav class="nav navbar-expand-md">
+            
+
+              <div class="navbar" id="navbarNav">
+                <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
               </div>
-            </div>
+            
           </nav>
 
         </div>
@@ -163,9 +147,12 @@
     </div>
 
     <div class="container py-4">
-        <div class="copyright">&copy; 2022 Top 10 Casinos Worldwide. All rights reserved.</div>
+      <div class="brand">
+        <img src="http://localhost/casino-hotels/wp-content/uploads/2023/05/footer-brand.png" />
       </div>
+      <p class="copyright">&copy; 2022 Top 10 Casinos Worldwide. All rights reserved.</p>
     </div>
+  </div>
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
