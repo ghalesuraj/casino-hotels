@@ -979,6 +979,20 @@ section {
   .nav{
     border-bottom: 1px solid #F3F4F6;
   }
+  .feature-holder .feature-number .fno{
+    font-weight: 700;
+    font-size: 24px;
+  }
+  .feature-holder .title{
+    font-weight: 700;
+    font-size: 24px;
+  }
+  .feature-holder p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    color: #A7A7A7;
+  }
   
 }
 
@@ -1157,4 +1171,17 @@ section {
 .copyright{
   color: #939393;
   font-size: 16px;
+}
+.feature-holder{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.feature-number{
+  background-color: #fc115c;
+  position: relative;
+  color: #ffffff;
+  padding: 0px 35px;
+  border-radius: 100px;
 }
