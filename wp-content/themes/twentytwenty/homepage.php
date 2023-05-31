@@ -7,29 +7,14 @@
   $hero_lg = get_field('hero_logo');
   $hero_title = get_field('hero_title');
   $hero_subtitle = get_field('hero_subtitle');
+  $section_title = get_field('section_title');
+  $section_subtitle = get_field('section_subtitle');
+  $about_title = get_field('about_title');
+  $about_subtitle = get_field('about_subtitle');
+  $about_content = get_field('about_content');
+  $about_image = get_field('about_image');
+  get_header();
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title><?php echo get_bloginfo( 'name' ) . ' : '. get_bloginfo( 'description' ); ?></title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="wp-content/themes/twentytwenty/assets/img/favicon.png" rel="icon">
-  <link href="wp-content/themes/twentytwenty/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  <link href="wp-content/themes/twentytwenty/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="wp-content/themes/twentytwenty/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <!-- Template Main CSS File -->
-  <link href="wp-content/themes/twentytwenty/assets/css/style.css" rel="stylesheet">
-</head>
 
 <body>
   <!-- ======= Hero Section ======= -->
@@ -40,7 +25,7 @@
         <div class="hero-text"><?php echo $hero_subtitle; ?></div>
         <a href="#" class="theme-btn">
           <div class="btn-txt">Explore Today</div>
-          <img class="btn-icon" alt="" src="assets/img/vector.svg" />
+          <!-- <img class="btn-icon" alt="" src="assets/img/vector.svg" /> -->
         </a>
       
     </div>
@@ -52,80 +37,77 @@
         <div class="container">
           <div class="row content">
               <div class="col-lg-6">
-                <div class="about-title">About us</div>
-                <b class="about-subtitle">Discover The Best Casino Hotels In the World</b>
-                <div class="lorem-ipsum-dolor-container">
-                  <p class="lorem-ipsum-dolor-sit-amet-co">
-                    <span class="about-txt"
-                      >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                      diam lectus, vestibulum bibendum faucibus eu, viverra ut ipsum.
-                      Lorem ipsum dolor sit amet, consectetur
+                <div class="title"><?php echo $about_subtitle; ?></div>
+                <b class="subtitle"><?php echo $about_title; ?></b>
+                <div class="content">
+                  <p>
+                    <span class="about-txt">
+                      <?php echo $about_content; ?>
                     </span>
-                    <span>&nbsp;</span>
                   </p>
-                  <p class="about-txt">
-                    adipiscing elit. Nunc diam lectus, vestibulum bibendum faucibus eu,
-                    viverra ut ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Nunc diam lectus, vestibulum bibendum faucibus eu, viverra ut
-                    ipsum. Lorem ipsum dolor sit amet, consectetu
-                  </p>
+                  
                 </div>
                 <a href="#" class="theme-btn">
                   <div class="btn-txt">Read More</div>
-                  <img class="btn-icon" alt="" src="assets/img/vector.svg" />
+                  <!-- <img class="btn-icon" alt="" src="assets/img/vector.svg" /> -->
                 </a>
               </div>
               <div class="col-lg-6 pt-4 pt-lg-0">
-                <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/05/about-img.png" class="img-fluid abt-img" alt="">
+                <img src="<?php echo $about_image; ?>" class="img-fluid abt-img" alt="">
               </div>
             </div>
         </div>
       </div>
     </section><!-- End About Section -->
+    <!-- ======= Hotel Listing Section ======= -->
+    <section id="hotel" class="hotel">
+        <div class="container">
+          <div class="row content">
+            <h1>The Best Casino Hotels Worldwide</h1>
+            <p> <i class="fa fa-calendar"></i><?php echo  date("d/m/Y"); ?></p>
+            <div class="hotel-listing">
+              <div class="listing-title">
+                <h2>Top Rated Hotel</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Hotel Listing Section -->
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us">
       <div class="container">
 
         <div class="row">
+          <p class="subtitle"><?php echo $section_subtitle; ?></p>
+          <h1 class="section-title"><?php echo $section_title; ?></h1>
           <div class="col-lg-6 d-flex align-items-stretch">
             <div class="content">
-              <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/05/why-bg.png" class="img-fluid abt-img" alt="">
+              <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/05/why-bg.png" class="img-fluid" alt="">
             </div>
           </div>
           <div class="col-lg-6 d-flex align-items-stretch">
             <div class="icon-boxes d-flex flex-column justify-content-center">
               <div class="row">
                 <div class="feature-container">
+                  <?php
+                    $items = get_field('feature');
+                    // value can be null, convert in case the array is empty
+                    $items = $items ?: [];
+                    $n = 0;
+                    foreach ($items as $item) {
+                    $n++;
+                  ?>
                   <div class="feature-holder">
                     <div class="feature-number">
-                      <b class="fno">1</b>
+                      <b class="fno"><?php echo $n; ?></b>
                     </div>
-                    <b class="title">Discover The Best Casino Hotels In the World</b>
+                    <b class="title"><?php echo $item['feature_title']; ?></b>
                     <p>
-                      adipiscing elit. Nunc diam lectus, vestibulum bibendum faucibus eu,
-                      viverra ut ipsum. Lorem ipsum dolor sit amet, consectetur
+                      <?php echo $item['feature_content']; ?>
                     </p>
                   </div>
-                  <div class="feature-holder">
-                    <div class="feature-number">
-                      <b class="fno">1</b>
-                    </div>
-                    <b class="title">Discover The Best Casino Hotels In the World</b>
-                    <p>
-                      adipiscing elit. Nunc diam lectus, vestibulum bibendum faucibus eu,
-                      viverra ut ipsum. Lorem ipsum dolor sit amet, consectetur
-                    </p>
-                  </div>
-                  <div class="feature-holder">
-                    <div class="feature-number">
-                      <b class="fno">1</b>
-                    </div>
-                    <b class="title">Discover The Best Casino Hotels In the World</b>
-                    <p>
-                      adipiscing elit. Nunc diam lectus, vestibulum bibendum faucibus eu,
-                      viverra ut ipsum. Lorem ipsum dolor sit amet, consectetur
-                    </p>
-                  </div>
+                  <?php } ?>
                 </div>
               </div>
             </div><!-- End .content-->
@@ -137,43 +119,6 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-          <div class="footer-brand"><img class="footer-lg" alt="" src="assets/img/footer-logo.svg" /></div>
-          
-          <nav class="nav navbar-expand-md">
-            
-
-              <div class="navbar" id="navbarNav">
-                <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
-              </div>
-            
-          </nav>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container py-4">
-      <div class="brand">
-        <img src="http://localhost/casino-hotels/wp-content/uploads/2023/05/footer-brand.png" />
-      </div>
-      <p class="copyright">&copy; 2022 Top 10 Casinos Worldwide. All rights reserved.</p>
-    </div>
-  </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
+<?php
+get_footer();?>
 

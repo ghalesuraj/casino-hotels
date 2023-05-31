@@ -30,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: Poppins;
 }
 
 /*--------------------------------------------------------------
@@ -126,7 +126,11 @@ h6 {
 #hero .hero-title{
   display: block;
   font-size: 55px;
-  line-height: 121%
+  line-height: 121%;
+  margin: 27px 0;
+}
+#hero .hero-text{
+  margin-bottom: 27px;
 }
 /*#hero .container {
   padding-top: 80px;
@@ -993,13 +997,16 @@ section {
     line-height: 28px;
     color: #A7A7A7;
   }
+  .footer-brand{
+    margin-bottom: 40px;
+  }
   
 }
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-#footer {
+.footer {
   color: #444444;
   font-size: 14px;
   background: #101010;
@@ -1008,16 +1015,16 @@ section {
 .footer-top .footer-lg{
   width: 10%;
 }
-#footer .footer-top {
-  padding: 60px 0 30px 0;
+.footer .footer-top {
+  padding: 30px 0 30px 0;
   /*background: #f9f8f9;*/
 }
 
-#footer .footer-top .footer-contact {
+.footer .footer-top .footer-contact {
   margin-bottom: 30px;
 }
 
-#footer .footer-top .footer-contact h4 {
+.footer .footer-top .footer-contact h4 {
   font-size: 22px;
   margin: 0 0 30px 0;
   padding: 2px 0 2px 0;
@@ -1025,7 +1032,7 @@ section {
   font-weight: 700;
 }
 
-#footer .footer-top .footer-contact p {
+.footer .footer-top .footer-contact p {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
@@ -1033,7 +1040,7 @@ section {
   color: #777777;
 }
 
-#footer .footer-top h4 {
+.footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
   color: #444444;
@@ -1041,50 +1048,50 @@ section {
   padding-bottom: 12px;
 }
 
-#footer .footer-top .footer-links {
+.footer .footer-top .footer-links {
   margin-bottom: 30px;
 }
 
-#footer .footer-top .footer-links ul {
+.footer .footer-top .footer-links ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-#footer .footer-top .footer-links ul i {
+.footer .footer-top .footer-links ul i {
   padding-right: 2px;
   color: #00c28e;
   font-size: 18px;
   line-height: 1;
 }
 
-#footer .footer-top .footer-links ul li {
+.footer .footer-top .footer-links ul li {
   padding: 10px 0;
   display: flex;
   align-items: center;
 }
 
-#footer .footer-top .footer-links ul li:first-child {
+.footer .footer-top .footer-links ul li:first-child {
   padding-top: 0;
 }
 
-#footer .footer-top .footer-links ul a {
+.footer .footer-top .footer-links ul a {
   color: #777777;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
 }
 
-#footer .footer-top .footer-links ul a:hover {
+.footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
   color: #009970;
 }
 
-#footer .footer-newsletter {
+.footer .footer-newsletter {
   font-size: 15px;
 }
 
-#footer .footer-newsletter h4 {
+.footer .footer-newsletter h4 {
   font-size: 16px;
   font-weight: bold;
   color: #444444;
@@ -1092,7 +1099,7 @@ section {
   padding-bottom: 12px;
 }
 
-#footer .footer-newsletter form {
+.footer .footer-newsletter form {
   margin-top: 30px;
   background: #fff;
   padding: 6px 10px;
@@ -1102,13 +1109,13 @@ section {
   border: 1px solid #e4e3e6;
 }
 
-#footer .footer-newsletter form input[type=email] {
+.footer .footer-newsletter form input[type=email] {
   border: 0;
   padding: 4px 8px;
   width: calc(100% - 100px);
 }
 
-#footer .footer-newsletter form input[type=submit] {
+.footer .footer-newsletter form input[type=submit] {
   position: absolute;
   top: 0;
   right: -2px;
@@ -1124,17 +1131,17 @@ section {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-#footer .footer-newsletter form input[type=submit]:hover {
+.footer .footer-newsletter form input[type=submit]:hover {
   background: #00664b;
 }
 
-#footer .credits {
+.footer .credits {
   padding-top: 5px;
   font-size: 13px;
   color: #444444;
 }
 
-#footer .social-links a {
+.footer .social-links a {
   font-size: 18px;
   display: inline-block;
   background: #009970;
@@ -1149,7 +1156,7 @@ section {
   transition: 0.3s;
 }
 
-#footer .social-links a:hover {
+.footer .social-links a:hover {
   background: #00805d;
   color: #fff;
   text-decoration: none;
@@ -1177,6 +1184,7 @@ section {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  margin-bottom: 20px;
 }
 .feature-number{
   background-color: #fc115c;
@@ -1184,4 +1192,74 @@ section {
   color: #ffffff;
   padding: 0px 35px;
   border-radius: 100px;
+  margin-bottom: 10px;
+}
+.why-us .subtitle{
+  text-align: center;
+  color: #FC115C;
+  font-size: 16px;
+  font-weight: 500;
+}
+.why-us h1{
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+
+}
+.why-us .content img{
+  width: 80%;
+}
+.about .title{
+  font-weight: 500;
+  font-size: 16px;
+  color: #FC115C;
+  margin-bottom: 36px;
+}
+
+.about .subtitle{
+  font-weight: 700;
+  font-size: 32px;
+  color: #000000;
+  line-height: 121%;
+}
+.about .content p{
+  font-weight: 600;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: #555555;
+}
+.about .content{
+  margin: 36px 0;
+}
+.hotel{
+  background-color: #f1f1f1;
+}
+.hotel h1{
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 121%;
+  text-align: center;
+  color: #000000;
+}
+.hotel p{
+  font-style: italic;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 126.5%;
+  text-align: center;
+}
+.hotel-listing .listing-title {
+  text-align: center;
+}
+.hotel-listing .listing-title h2 {
+  border-radius: 20px 20px 0 0;
+  background-color: #5c33ff;
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 121%;
+  padding: 10px 60px;
 }

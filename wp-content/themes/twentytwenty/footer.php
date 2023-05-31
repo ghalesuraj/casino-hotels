@@ -10,56 +10,36 @@
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
-
+	$hero_lg = get_field('hero_logo');
 ?>
-			<footer id="site-footer" class="header-footer-group">
+			<footer class="footer">
 
-				<div class="section-inner">
+			    <div class="footer-top">
+			      <div class="container">
+			        <div class="row">
+			          <div class="footer-brand"><img class="hero-lg" alt="" src="<?php echo $hero_lg; ?>" /></div>
+			          
+			          <nav class="nav navbar-expand-md">
+			            
 
-					<div class="footer-credits">
+			              <div class="navbar" id="navbarNav">
+			                <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
+			              </div>
+			            
+			          </nav>
 
-						<p class="footer-copyright">&copy;
-							<?php
-							echo date_i18n(
-								/* translators: Copyright date format, see https://www.php.net/manual/datetime.format.php */
-								_x( 'Y', 'copyright date format', 'twentytwenty' )
-							);
-							?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						</p><!-- .footer-copyright -->
+			        </div>
+			      </div>
+			    </div>
 
-						<?php
-						if ( function_exists( 'the_privacy_policy_link' ) ) {
-							the_privacy_policy_link( '<p class="privacy-policy">', '</p>' );
-						}
-						?>
-
-						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwenty' ) ); ?>">
-								<?php _e( 'Powered by WordPress', 'twentytwenty' ); ?>
-							</a>
-						</p><!-- .powered-by-wordpress -->
-
-					</div><!-- .footer-credits -->
-
-					<a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'To the top %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-long -->
-						<span class="to-the-top-short">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'Up %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-short -->
-					</a><!-- .to-the-top -->
-
-				</div><!-- .section-inner -->
-
-			</footer><!-- #site-footer -->
+			    <div class="container py-4">
+			      <div class="brand">
+			        <img src="http://localhost/casino-hotels/wp-content/uploads/2023/05/footer-brand.png" />
+			      </div>
+			      <p class="copyright">&copy; 2022 Top 10 Casinos Worldwide. All rights reserved.</p>
+			    </div>
+			  </div>
+		  </footer><!-- End Footer --><!-- #site-footer -->
 
 		<?php wp_footer(); ?>
 

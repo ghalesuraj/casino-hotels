@@ -802,3 +802,21 @@ function twentytwenty_get_elements_array() {
 	 */
 	return apply_filters( 'twentytwenty_get_elements_array', $elements );
 }
+/* Custom Post Type Start */
+function create_posttype() {
+	register_post_type( 'hotels',
+	// CPT Options
+	array(
+	  'labels' => array(
+	   'name' => __( 'Casino Hotels' ),
+	   'singular_name' => __( 'hotels' )
+	  ),
+	  'public' => true,
+	  'has_archive' => false,
+	  'rewrite' => array('slug' => 'casino-hotels'),
+	 )
+	);
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype' );
+/* Custom Post Type End */
