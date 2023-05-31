@@ -1263,3 +1263,6 @@ section {
   line-height: 121%;
   padding: 10px 60px;
 }
+.skip-link{
+  display: none !important;
+}
